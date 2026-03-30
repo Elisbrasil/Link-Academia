@@ -1,0 +1,313 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.page {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  background-image: url("img/grupo.png");
+  background-size: cover;
+  background-position: center -40px;
+  background-repeat: repeat-y;
+  z-index: 0;
+}
+
+
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.6) 35%,
+    rgba(0, 0, 0, 0.8) 60%,
+    rgba(0, 0, 0, 0.92) 75%
+  );
+}
+
+/* ── Content layer ── */
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 48px 28px 60px;
+}
+
+/* ── Avatar / Logo ── */
+.avatar-wrap {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  overflow: hidden;
+  background: #1a1a1a;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+.avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.subtitle {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+.subtitle strong {
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ── Social icons ── */
+.socials {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease;
+}
+.socials a:hover {
+  transform: scale(1.12);
+  opacity: 0.9;
+}
+.socials a img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.social-whatsapp {
+  background: #25d366;
+}
+.social-instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+.social-youtube {
+  background: #ff0000;
+}
+.social-tiktok {
+  background: #000;
+  border: 1.5px solid #333;
+}
+
+.socials a svg {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+}
+
+/* ── Buttons ── */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  height: 58px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+  letter-spacing: 0.1px;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(192, 57, 43, 0.45);
+  background: #c0392b !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+.btn:hover svg {
+  stroke: #fff !important;
+  fill: #fff !important;
+}
+.btn:hover .btn-arrow {
+  background: #fff !important;
+}
+.btn:hover .btn-arrow svg {
+  stroke: #fff !important;
+  fill: #fff !important;
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: #fff;
+  color: #111;
+}
+
+
+.btn-secondary {
+  background: #fff;
+  color: #111;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-icon svg,
+.btn-icon img {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.btn-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.btn-primary .btn-arrow {
+  background: rgba(0, 0, 0, 0.08);
+}
+.btn-secondary .btn-arrow {
+  background: rgba(0, 0, 0, 0.08);
+}
+.btn-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+.btn-primary .btn-arrow svg {
+  fill: #111;
+}
+.btn-secondary .btn-arrow svg {
+  fill: #111;
+}
+
+/* Profile btn special */
+.btn-profile {
+  background: #fff;
+  border: none;
+  color: #111;
+  backdrop-filter: none;
+}
+.btn-profile .btn-arrow {
+  background: rgba(0, 0, 0, 0.08);
+}
+.btn-profile .btn-arrow svg {
+  fill: #111;
+}
+
+/* ── Fade-in animation ── */
+.content > * {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp 0.55s ease forwards;
+}
+.avatar-wrap {
+  animation-delay: 0.05s;
+}
+h1 {
+  animation-delay: 0.15s;
+}
+.subtitle {
+  animation-delay: 0.22s;
+}
+.socials {
+  animation-delay: 0.3s;
+}
+.buttons {
+  animation-delay: 0.38s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .bg::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.7) 35%,
+      rgba(0, 0, 0, 0.95) 60%,
+      rgba(0, 0, 0, 1) 75%
+    );
+  }
+}
