@@ -302,6 +302,11 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    .bg {
+    position: absolute;
+    inset: 0;
+  }
+
   .bg::after {
     background: linear-gradient(
       to bottom,
